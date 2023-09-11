@@ -25,6 +25,7 @@ jobs:
           docker-compose up -d
           sleep 5
           docker-compose logs app  # Verifique os logs para depuração
+          chmod 777 test.sh
           ./test.sh
         env:
           NODE_ENV: development
