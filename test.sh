@@ -18,11 +18,8 @@ wait_for_service() {
   done
 }
 
-# Inicialize o aplicativo Docker Compose em segundo plano
-docker-compose up -d
-
 # Aguarde até que o serviço Node.js esteja pronto
-wait_for_service "app" 3000
+wait_for_service "localhost" 3000
 
 # Teste a API
 echo "Testando a API..."
