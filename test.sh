@@ -29,6 +29,6 @@ if [ "$response" -eq 200 ]; then
   echo "A API está funcionando corretamente (código de resposta: $response)."
 else
   echo "A API não está funcionando corretamente (código de resposta: $response)."
-  return 1
+  exit 1
 fi
 
