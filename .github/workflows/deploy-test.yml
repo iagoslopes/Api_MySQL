@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - banco
 
 jobs:
   deploy_and_test:
