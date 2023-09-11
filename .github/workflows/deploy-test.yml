@@ -1,0 +1,35 @@
+name: Deploy and Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install docker-compose
+        continue-on-error: true
+
+      - name: Build and Test
+        run: |
+          docker-compose build
+          docker-compose up -d
+          sleep 5
+          docker-compose logs app  # Verifique os logs para depuração
+          ./test.sh
+        env:
+          NODE_ENV: development
+        continue-on-error: true
+
+      - name: Stop and clean up
+        run: docker-compose down
+

@@ -1,0 +1,10 @@
+{
+    "name": "nodejs-mysql-api",
+    "version": "1.0.0",
+    "description": "Node.js API com MySQL",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mysql2": "^2.3.0"
+    }
+  }
+  
