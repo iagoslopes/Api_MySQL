@@ -14,5 +14,8 @@ COPY . /app/
 # Exponha a porta que o aplicativo irá ouvir
 EXPOSE 3000
 
+#BD
+CMD ["node", "script.js"]
+
 # Inicie o aplicativo quando o contêiner for iniciado
 CMD ["node", "app.js"]
