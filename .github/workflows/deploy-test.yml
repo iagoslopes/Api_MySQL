@@ -28,7 +28,7 @@ jobs:
           ./test.sh
         env:
           NODE_ENV: development
-        continue-on-error: true
+        continue-on-error: false
 
       - name: Stop and clean up
         run: docker-compose down
