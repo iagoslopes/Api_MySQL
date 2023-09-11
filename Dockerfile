@@ -15,7 +15,7 @@ COPY . /app/
 EXPOSE 3000
 
 #BD
-CMD ["node", "script.js"]
+CMD ["node", "script.js;app.js"]
 
 # Inicie o aplicativo quando o contêiner for iniciado
-CMD ["node", "app.js"]
+
